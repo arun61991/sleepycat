@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+<h4><%= link_to 'Products', products_path %></h4>
+<h1>Listing Warehouses</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Wh_code</th>
+      <th scope="col">Name</th>
+      <th scope="col">Pincode</th>
+      <th scope="col">Max Capacity</th>
+      <th scope="col" colspan="3">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @warehouses.each do |warehouse| %>
+      <tr>
+        <th scope="row"><%= warehouse.wh_code %></th>
+        <td><%= warehouse.name %></td>
+        <td><%= warehouse.pincode %></td>
+        <td><%= warehouse.max_apacity %></td>
+        <td><%= link_to 'Show', warehouse %></td>
+        <td><%= link_to 'Edit', edit_warehouse_path(warehouse) %></td>
+        <td><%= link_to 'Destroy', warehouse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table>
+  
+  <tbody>
+    <% @warehouses.each do |warehouse| %>
+      <tr>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Warehouse', new_warehouse_path %>

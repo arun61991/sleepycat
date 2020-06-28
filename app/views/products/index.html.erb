@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+<h4><%= link_to 'Warehouses', warehouses_path %></h4>
+<h1>Listing Products</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Product sku</th>
+      <th scope="col">Price</th>
+      <th scope="col">Item count</th>
+      <th scope="col">Low item threshold</th>
+      <th scope="col">Warehouse</th>
+      <th scope="col" colspan="2">Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <th scope="row"><%= link_to product.product_sku, edit_product_path(product) %></th>
+        <td><%= product.price %></td>
+        <td <% if product.item_count <  product.low_item_threshold%> style="background: red" <% end %>>
+          <%= product.item_count %></td>
+        <td><%= product.low_item_threshold %></td>
+        <td><%= product.warehouse.name %></td>
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product', new_product_path %>

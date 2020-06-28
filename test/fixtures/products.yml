@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  product_sku: MyString
+  price: 1
+  item_count: 1
+  low_item_threshold: 1
+
+two:
+  name: MyString
+  product_sku: MyString
+  price: 1
+  item_count: 1
+  low_item_threshold: 1
